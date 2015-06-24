@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>PersonalShieldMKII</name>
+	<author>Skullywag</author>
+	<targetVersion>Alpha 11</targetVersion>
+  <description>Adds an expensive personal shield that allows shooting from within, charges slower than vanilla melee shield.</description>
+</ModMetaData>

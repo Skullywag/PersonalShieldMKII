@@ -1,0 +1,5 @@
+C:\Users\mjsku_000\Desktop\RimWorldAlpha11Win\RimWorld834Win\Mods\PersonalShieldMK2\Source\PersonalShieldMK2\bin\Debug\PersonalShieldMK2.dll
+C:\Users\mjsku_000\Desktop\RimWorldAlpha11Win\RimWorld834Win\Mods\PersonalShieldMK2\Source\PersonalShieldMK2\bin\Debug\PersonalShieldMK2.pdb
+C:\Users\mjsku_000\Desktop\RimWorldAlpha11Win\RimWorld834Win\Mods\PersonalShieldMK2\Source\PersonalShieldMK2\obj\Debug\PersonalShieldMK2.csprojResolveAssemblyReference.cache
+C:\Users\mjsku_000\Desktop\RimWorldAlpha11Win\RimWorld834Win\Mods\PersonalShieldMK2\Source\PersonalShieldMK2\obj\Debug\PersonalShieldMK2.dll
+C:\Users\mjsku_000\Desktop\RimWorldAlpha11Win\RimWorld834Win\Mods\PersonalShieldMK2\Source\PersonalShieldMK2\obj\Debug\PersonalShieldMK2.pdb
