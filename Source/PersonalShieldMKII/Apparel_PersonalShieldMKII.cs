@@ -62,7 +62,7 @@ namespace PersonalShieldMKII
 		{
 			get
 			{
-				return !this.wearer.Dead && !this.wearer.Downed && (!this.wearer.IsPrisonerOfColony || (this.wearer.BrokenStateDef != null && this.wearer.BrokenStateDef == BrokenStateDefOf.Berserk)) && ((this.wearer.playerController != null && this.wearer.playerController.Drafted) || this.wearer.Faction.HostileTo(Faction.OfColony) || Find.TickManager.TicksGame < this.lastKeepDisplayTick + this.KeepDisplayingTicks);
+				return !this.wearer.Dead && !this.wearer.Downed && (!this.wearer.IsPrisonerOfColony || (this.wearer.BrokenStateDef != null && this.wearer.BrokenStateDef == BrokenStateDefOf.Berserk)) && ((this.wearer.drafter != null && this.wearer.drafter.Drafted) || this.wearer.Faction.HostileTo(Faction.OfColony) || Find.TickManager.TicksGame < this.lastKeepDisplayTick + this.KeepDisplayingTicks);
 			}
 		}
 		public override void ExposeData()
@@ -95,7 +95,7 @@ namespace PersonalShieldMKII
             public override GizmoResult GizmoOnGUI(Vector2 topLeft)
             {
                 Rect rect = new Rect(topLeft.x, topLeft.y, this.Width, 75f);
-                Widgets.DrawWindow(rect);
+                Widgets.DrawWindowBackground(rect);
                 Rect rect2 = GenUI.ContractedBy(rect, 6f);
                 Rect rect3 = rect2;
                 rect3.height = rect.height / 2f;
