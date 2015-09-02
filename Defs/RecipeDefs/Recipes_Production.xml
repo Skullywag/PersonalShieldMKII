@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RecipeDefs>
+
+  <RecipeDef>
+    <defName>RepairShield2</defName>
+    <label>repair personal shield mkii</label>
+    <description>Use uranium to reinforce worn personal shields.</description>
+    <jobString>Repairing personal shield.</jobString>
+    <workAmount>1500</workAmount>
+    <workSpeedStat>SmithingSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <skillRequirements>
+      <li>
+        <skill>Crafting</skill>
+        <minLevel>12</minLevel>
+      </li>
+    </skillRequirements>
+    <workSkill>Crafting</workSkill>
+    <recipeUsers>
+      <li>TableMachining</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>PersonalShieldMKII</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <PersonalShieldMKII>1</PersonalShieldMKII>
+    </products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Uranium</li>
+        <li>PersonalShieldMKII</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  
+</RecipeDefs>
