@@ -3,7 +3,7 @@
 
   <RecipeDef>
     <defName>RepairShield2</defName>
-    <label>repair personal shield mkii</label>
+    <label>repair personal shield MKII</label>
     <description>Use uranium to reinforce worn personal shields.</description>
     <jobString>Repairing personal shield.</jobString>
     <workAmount>1500</workAmount>
@@ -32,6 +32,14 @@
       <li>
         <filter>
           <thingDefs>
+            <li>Components</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
             <li>PersonalShieldMKII</li>
           </thingDefs>
         </filter>
@@ -44,6 +52,7 @@
     <fixedIngredientFilter>
       <thingDefs>
         <li>Uranium</li>
+        <li>Components</li>
         <li>PersonalShieldMKII</li>
       </thingDefs>
     </fixedIngredientFilter>

@@ -62,7 +62,7 @@ namespace PersonalShieldMKII
 		{
 			get
 			{
-				return !this.wearer.Dead && !this.wearer.Downed && (!this.wearer.IsPrisonerOfColony || (this.wearer.BrokenStateDef != null && this.wearer.BrokenStateDef == BrokenStateDefOf.Berserk)) && ((this.wearer.drafter != null && this.wearer.drafter.Drafted) || this.wearer.Faction.HostileTo(Faction.OfColony) || Find.TickManager.TicksGame < this.lastKeepDisplayTick + this.KeepDisplayingTicks);
+				return !this.wearer.Dead && !this.wearer.Downed && (!this.wearer.IsPrisonerOfColony || (this.wearer.MentalStateDef != null && this.wearer.MentalStateDef == MentalStateDefOf.Berserk)) && ((this.wearer.drafter != null && this.wearer.drafter.Drafted) || this.wearer.Faction.HostileTo(Faction.OfColony) || Find.TickManager.TicksGame < this.lastKeepDisplayTick + this.KeepDisplayingTicks);
 			}
 		}
 		public override void ExposeData()
@@ -204,8 +204,8 @@ namespace PersonalShieldMKII
 			if (this.ShieldState == ShieldState.Active && this.ShouldDisplay)
 			{
 				float num = Mathf.Lerp(1.2f, 1.55f, this.energy);
-				Vector3 vector = this.wearer.drawer.DrawPos;
-				vector.y = Altitudes.AltitudeFor(AltitudeLayer.MoteOverhead);
+				Vector3 vector = this.wearer.Drawer.DrawPos;
+                vector.y = Altitudes.AltitudeFor(AltitudeLayer.MoteOverhead);
 				int num2 = Find.TickManager.TicksGame - this.lastAbsorbDamageTick;
 				if (num2 < 8)
 				{
