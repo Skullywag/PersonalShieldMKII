@@ -32,7 +32,7 @@
       <li>
         <filter>
           <thingDefs>
-            <li>Components</li>
+            <li>Component</li>
           </thingDefs>
         </filter>
         <count>1</count>
@@ -52,7 +52,7 @@
     <fixedIngredientFilter>
       <thingDefs>
         <li>Uranium</li>
-        <li>Components</li>
+        <li>Component</li>
         <li>PersonalShieldMKII</li>
       </thingDefs>
     </fixedIngredientFilter>

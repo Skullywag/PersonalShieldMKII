@@ -62,7 +62,7 @@ namespace PersonalShieldMKII
 		{
 			get
 			{
-				return !this.wearer.Dead && !this.wearer.Downed && (!this.wearer.IsPrisonerOfColony || (this.wearer.MentalStateDef != null && this.wearer.MentalStateDef == MentalStateDefOf.Berserk)) && ((this.wearer.drafter != null && this.wearer.drafter.Drafted) || this.wearer.Faction.HostileTo(Faction.OfColony) || Find.TickManager.TicksGame < this.lastKeepDisplayTick + this.KeepDisplayingTicks);
+				return !this.wearer.Dead && !this.wearer.Downed && (!this.wearer.IsPrisonerOfColony || (this.wearer.MentalStateDef != null && this.wearer.MentalStateDef == MentalStateDefOf.Berserk)) && ((this.wearer.drafter != null && this.wearer.drafter.Drafted) || this.wearer.Faction.HostileTo(Faction.OfPlayer) || Find.TickManager.TicksGame < this.lastKeepDisplayTick + this.KeepDisplayingTicks);
 			}
 		}
 		public override void ExposeData()
