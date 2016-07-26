@@ -7,6 +7,7 @@ using Verse.Sound;
 using RimWorld;
 namespace PersonalShieldMKII
 {
+    [StaticConstructorOnStartup]
     public class Apparel_PersonalShieldMKII : Apparel
 	{
 		private const float MinDrawSize = 1.2f;

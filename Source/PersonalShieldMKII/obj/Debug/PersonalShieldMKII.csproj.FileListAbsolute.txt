@@ -43,3 +43,11 @@ C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\PersonalShieldMKII\Source\Persona
 C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\NAudio.dll
 C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\NVorbis.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha14Win\RimWorld1234Win\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\PersonalShieldMKII.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha14Win\RimWorld1234Win\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\PersonalShieldMKII.pdb
+C:\Users\mjsku\Desktop\RimWorldAlpha14Win\RimWorld1234Win\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha14Win\RimWorld1234Win\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\NAudio.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha14Win\RimWorld1234Win\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\NVorbis.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha14Win\RimWorld1234Win\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\obj\Debug\PersonalShieldMKII.csprojResolveAssemblyReference.cache
+C:\Users\mjsku\Desktop\RimWorldAlpha14Win\RimWorld1234Win\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\obj\Debug\PersonalShieldMKII.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha14Win\RimWorld1234Win\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\obj\Debug\PersonalShieldMKII.pdb
