@@ -51,3 +51,24 @@ C:\Users\mjsku\Desktop\RimWorldAlpha14Win\RimWorld1234Win\Mods\PersonalShieldMKI
 C:\Users\mjsku\Desktop\RimWorldAlpha14Win\RimWorld1234Win\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\obj\Debug\PersonalShieldMKII.csprojResolveAssemblyReference.cache
 C:\Users\mjsku\Desktop\RimWorldAlpha14Win\RimWorld1234Win\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\obj\Debug\PersonalShieldMKII.dll
 C:\Users\mjsku\Desktop\RimWorldAlpha14Win\RimWorld1234Win\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\obj\Debug\PersonalShieldMKII.pdb
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\PersonalShieldMKII.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\PersonalShieldMKII.pdb
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\Assembly-CSharp.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\UnityEngine.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\NAudio.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\NVorbis.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\obj\Debug\PersonalShieldMKII.csprojResolveAssemblyReference.cache
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\obj\Debug\PersonalShieldMKII.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\PersonalShieldMKII\Source\PersonalShieldMKII\obj\Debug\PersonalShieldMKII.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PersonalShieldMKII-A16\Source\PersonalShieldMKII\bin\Debug\PersonalShieldMKII.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PersonalShieldMKII-A16\Source\PersonalShieldMKII\bin\Debug\PersonalShieldMKII.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PersonalShieldMKII-A16\Source\PersonalShieldMKII\bin\Debug\Assembly-CSharp.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PersonalShieldMKII-A16\Source\PersonalShieldMKII\bin\Debug\UnityEngine.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PersonalShieldMKII-A16\Source\PersonalShieldMKII\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PersonalShieldMKII-A16\Source\PersonalShieldMKII\bin\Debug\NAudio.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PersonalShieldMKII-A16\Source\PersonalShieldMKII\bin\Debug\NVorbis.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PersonalShieldMKII-A16\Source\PersonalShieldMKII\bin\Debug\UnityEngine.xml
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PersonalShieldMKII-A16\Source\PersonalShieldMKII\obj\Debug\PersonalShieldMKII.csprojResolveAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PersonalShieldMKII-A16\Source\PersonalShieldMKII\obj\Debug\PersonalShieldMKII.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PersonalShieldMKII-A16\Source\PersonalShieldMKII\obj\Debug\PersonalShieldMKII.pdb

@@ -166,41 +166,45 @@ namespace PersonalShieldMKII
 		{
 			this.lastKeepDisplayTick = Find.TickManager.TicksGame;
 		}
-		private void AbsorbedDamage(DamageInfo dinfo)
-		{
-            Apparel_PersonalShieldMKII.SoundAbsorbDamage.PlayOneShot(this.wearer.Position);
-			this.impactAngleVect = Vector3Utility.HorizontalVectorFromAngle(dinfo.Angle);
-			Vector3 loc = this.wearer.TrueCenter() + this.impactAngleVect.RotatedBy(180f) * 0.5f;
-			float num = Mathf.Min(10f, 2f + (float)dinfo.Amount / 10f);
-			MoteThrower.ThrowStatic(loc, ThingDefOf.Mote_ExplosionFlash, num);
-			int num2 = (int)num;
-			for (int i = 0; i < num2; i++)
-			{
-				MoteThrower.ThrowDustPuff(loc, Rand.Range(0.8f, 1.2f));
-			}
-			this.lastAbsorbDamageTick = Find.TickManager.TicksGame;
-			this.KeepDisplaying();
-		}
-		private void Break()
-		{
-            Apparel_PersonalShieldMKII.SoundBreak.PlayOneShot(this.wearer.Position);
-			MoteThrower.ThrowStatic(this.wearer.TrueCenter(), ThingDefOf.Mote_ExplosionFlash, 12f);
-			for (int i = 0; i < 6; i++)
-			{
-				Vector3 loc = this.wearer.TrueCenter() + Vector3Utility.HorizontalVectorFromAngle((float)Rand.Range(0, 360)) * Rand.Range(0.3f, 0.6f);
-				MoteThrower.ThrowDustPuff(loc, Rand.Range(0.8f, 1.2f));
-			}
-			this.energy = 0f;
-			this.ticksToReset = this.StartingTicksToReset;
-		}
-		private void Reset()
-		{
-            Apparel_PersonalShieldMKII.SoundReset.PlayOneShot(this.wearer.Position);
-			MoteThrower.ThrowLightningGlow(this.wearer.TrueCenter(), 3f);
-			this.ticksToReset = -1;
-			this.energy = this.EnergyOnReset;
-		}
-		public override void DrawWornExtras()
+        private void AbsorbedDamage(DamageInfo dinfo)
+        {
+            SoundDefOf.PersonalShieldAbsorbDamage.PlayOneShot(new TargetInfo(this.wearer.Position, this.wearer.Map, false));
+            this.impactAngleVect = Vector3Utility.HorizontalVectorFromAngle(dinfo.Angle);
+            Vector3 loc = this.wearer.TrueCenter() + this.impactAngleVect.RotatedBy(180f) * 0.5f;
+            float num = Mathf.Min(10f, 2f + (float)dinfo.Amount / 10f);
+            MoteMaker.MakeStaticMote(loc, this.wearer.Map, ThingDefOf.Mote_ExplosionFlash, num);
+            int num2 = (int)num;
+            for (int i = 0; i < num2; i++)
+            {
+                MoteMaker.ThrowDustPuff(loc, this.wearer.Map, Rand.Range(0.8f, 1.2f));
+            }
+            this.lastAbsorbDamageTick = Find.TickManager.TicksGame;
+            this.KeepDisplaying();
+        }
+        private void Break()
+        {
+            SoundDefOf.PersonalShieldBroken.PlayOneShot(new TargetInfo(this.wearer.Position, this.wearer.Map, false));
+            MoteMaker.MakeStaticMote(this.wearer.TrueCenter(), this.wearer.Map, ThingDefOf.Mote_ExplosionFlash, 12f);
+            for (int i = 0; i < 6; i++)
+            {
+                Vector3 loc = this.wearer.TrueCenter() + Vector3Utility.HorizontalVectorFromAngle((float)Rand.Range(0, 360)) * Rand.Range(0.3f, 0.6f);
+                MoteMaker.ThrowDustPuff(loc, this.wearer.Map, Rand.Range(0.8f, 1.2f));
+            }
+            this.energy = 0f;
+            this.ticksToReset = this.StartingTicksToReset;
+        }
+
+        private void Reset()
+        {
+            if (this.wearer.Spawned)
+            {
+                SoundDefOf.PersonalShieldReset.PlayOneShot(new TargetInfo(this.wearer.Position, this.wearer.Map, false));
+                MoteMaker.ThrowLightningGlow(this.wearer.TrueCenter(), this.wearer.Map, 3f);
+            }
+            this.ticksToReset = -1;
+            this.energy = this.EnergyOnReset;
+        }
+        public override void DrawWornExtras()
 		{
 			if (this.ShieldState == ShieldState.Active && this.ShouldDisplay)
 			{

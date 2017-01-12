@@ -48,6 +48,7 @@
     <tickerType>Normal</tickerType>
     <statBases>
       <MarketValue>2000</MarketValue>
+      <Mass>3</Mass>
       <PersonalShieldRechargeRate>0.10</PersonalShieldRechargeRate>
       <PersonalShieldEnergyMax>1.1</PersonalShieldEnergyMax>
     </statBases>
