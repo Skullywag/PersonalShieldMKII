@@ -31,14 +31,14 @@ namespace PersonalShieldMKII
 		{
 			get
 			{
-				return this.GetStatValue(StatDefOf.PersonalShieldEnergyMax, true);
+				return this.GetStatValue(StatDefOf.EnergyShieldEnergyMax, true);
 			}
 		}
 		private float EnergyGainPerTick
 		{
 			get
 			{
-				return this.GetStatValue(StatDefOf.PersonalShieldRechargeRate, true) / 60f;
+				return this.GetStatValue(StatDefOf.EnergyShieldRechargeRate, true) / 60f;
 			}
 		}
 		public float Energy
@@ -61,17 +61,18 @@ namespace PersonalShieldMKII
 		}
 		private bool ShouldDisplay
 		{
-			get
-			{
-				return !this.wearer.Dead && !this.wearer.Downed && (!this.wearer.IsPrisonerOfColony || (this.wearer.MentalStateDef != null && this.wearer.MentalStateDef == MentalStateDefOf.Berserk)) && ((this.wearer.drafter != null && this.wearer.drafter.Drafted) || this.wearer.Faction.HostileTo(Faction.OfPlayer) || Find.TickManager.TicksGame < this.lastKeepDisplayTick + this.KeepDisplayingTicks);
-			}
-		}
+		    get
+		    {
+		        Pawn wearer = base.Wearer;
+		        return !wearer.Dead && !wearer.Downed && (!wearer.IsPrisonerOfColony || (wearer.MentalStateDef != null && wearer.MentalStateDef.IsAggro)) && (wearer.Drafted || wearer.Faction.HostileTo(Faction.OfPlayer) || Find.TickManager.TicksGame < this.lastKeepDisplayTick + this.KeepDisplayingTicks);
+		    }
+        }
 		public override void ExposeData()
 		{
 			base.ExposeData();
-			Scribe_Values.LookValue<float>(ref this.energy, "energy", 0f, false);
-			Scribe_Values.LookValue<int>(ref this.ticksToReset, "ticksToReset", -1, false);
-			Scribe_Values.LookValue<int>(ref this.lastKeepDisplayTick, "lastKeepDisplayTick", 0, false);
+			Scribe_Values.Look<float>(ref this.energy, "energy", 0f, false);
+			Scribe_Values.Look<int>(ref this.ticksToReset, "ticksToReset", -1, false);
+			Scribe_Values.Look<int>(ref this.lastKeepDisplayTick, "lastKeepDisplayTick", 0, false);
 		}
         public override IEnumerable<Gizmo> GetWornGizmos()
         {
@@ -104,11 +105,11 @@ namespace PersonalShieldMKII
                 Widgets.Label(rect3, this.shield.LabelCap);
                 Rect rect4 = rect2;
                 rect4.yMin = rect.y + rect.height / 2f;
-                float num = this.shield.Energy / Mathf.Max(1f, StatExtension.GetStatValue(this.shield, StatDefOf.PersonalShieldEnergyMax, true));
+                float num = this.shield.Energy / Mathf.Max(1f, StatExtension.GetStatValue(this.shield, StatDefOf.EnergyShieldEnergyMax, true));
                 Widgets.FillableBar(rect4, num, Apparel_PersonalShieldMKII.Gizmo_PersonalShieldStatus.FullTex, Apparel_PersonalShieldMKII.Gizmo_PersonalShieldStatus.EmptyTex, false);
                 Text.Font = GameFont.Small;
                 Text.Anchor = TextAnchor.MiddleCenter;
-                Widgets.Label(rect4, (this.shield.Energy * 100f).ToString("F0") + " / " + (StatExtension.GetStatValue(this.shield, StatDefOf.PersonalShieldEnergyMax, true) * 100f).ToString("F0"));
+                Widgets.Label(rect4, (this.shield.Energy * 100f).ToString("F0") + " / " + (StatExtension.GetStatValue(this.shield, StatDefOf.EnergyShieldEnergyMax, true) * 100f).ToString("F0"));
                 Text.Anchor = TextAnchor.UpperLeft;
                 return new GizmoResult(0);
             }
@@ -116,7 +117,7 @@ namespace PersonalShieldMKII
 		public override void Tick()
 		{
 			base.Tick();
-			if (this.wearer == null)
+			if (base.Wearer == null)
 			{
 				this.energy = 0f;
 				return;
@@ -143,7 +144,7 @@ namespace PersonalShieldMKII
 		}
 		public override bool CheckPreAbsorbDamage(DamageInfo dinfo)
 		{
-			if (this.ShieldState == ShieldState.Active && ((dinfo.Instigator != null && !dinfo.Instigator.Position.AdjacentTo8Way(this.wearer.Position)) || dinfo.Def.isExplosive))
+			if (this.ShieldState == ShieldState.Active && ((dinfo.Instigator != null && !dinfo.Instigator.Position.AdjacentTo8Way(base.Wearer.Position)) || dinfo.Def.isExplosive))
 			{
 				this.energy -= (float)dinfo.Amount * this.EnergyLossPerDamage;
 				if (dinfo.Def == DamageDefOf.EMP)
@@ -168,27 +169,27 @@ namespace PersonalShieldMKII
 		}
         private void AbsorbedDamage(DamageInfo dinfo)
         {
-            SoundDefOf.PersonalShieldAbsorbDamage.PlayOneShot(new TargetInfo(this.wearer.Position, this.wearer.Map, false));
+            SoundDefOf.EnergyShieldAbsorbDamage.PlayOneShot(new TargetInfo(base.Wearer.Position, base.Wearer.Map, false));
             this.impactAngleVect = Vector3Utility.HorizontalVectorFromAngle(dinfo.Angle);
-            Vector3 loc = this.wearer.TrueCenter() + this.impactAngleVect.RotatedBy(180f) * 0.5f;
+            Vector3 loc = base.Wearer.TrueCenter() + this.impactAngleVect.RotatedBy(180f) * 0.5f;
             float num = Mathf.Min(10f, 2f + (float)dinfo.Amount / 10f);
-            MoteMaker.MakeStaticMote(loc, this.wearer.Map, ThingDefOf.Mote_ExplosionFlash, num);
+            MoteMaker.MakeStaticMote(loc, base.Wearer.Map, ThingDefOf.Mote_ExplosionFlash, num);
             int num2 = (int)num;
             for (int i = 0; i < num2; i++)
             {
-                MoteMaker.ThrowDustPuff(loc, this.wearer.Map, Rand.Range(0.8f, 1.2f));
+                MoteMaker.ThrowDustPuff(loc, base.Wearer.Map, Rand.Range(0.8f, 1.2f));
             }
             this.lastAbsorbDamageTick = Find.TickManager.TicksGame;
             this.KeepDisplaying();
         }
         private void Break()
         {
-            SoundDefOf.PersonalShieldBroken.PlayOneShot(new TargetInfo(this.wearer.Position, this.wearer.Map, false));
-            MoteMaker.MakeStaticMote(this.wearer.TrueCenter(), this.wearer.Map, ThingDefOf.Mote_ExplosionFlash, 12f);
+            SoundDefOf.EnergyShieldBroken.PlayOneShot(new TargetInfo(base.Wearer.Position, base.Wearer.Map, false));
+            MoteMaker.MakeStaticMote(base.Wearer.TrueCenter(), base.Wearer.Map, ThingDefOf.Mote_ExplosionFlash, 12f);
             for (int i = 0; i < 6; i++)
             {
-                Vector3 loc = this.wearer.TrueCenter() + Vector3Utility.HorizontalVectorFromAngle((float)Rand.Range(0, 360)) * Rand.Range(0.3f, 0.6f);
-                MoteMaker.ThrowDustPuff(loc, this.wearer.Map, Rand.Range(0.8f, 1.2f));
+                Vector3 loc = base.Wearer.TrueCenter() + Vector3Utility.HorizontalVectorFromAngle((float)Rand.Range(0, 360)) * Rand.Range(0.3f, 0.6f);
+                MoteMaker.ThrowDustPuff(loc, base.Wearer.Map, Rand.Range(0.8f, 1.2f));
             }
             this.energy = 0f;
             this.ticksToReset = this.StartingTicksToReset;
@@ -196,10 +197,10 @@ namespace PersonalShieldMKII
 
         private void Reset()
         {
-            if (this.wearer.Spawned)
+            if (base.Wearer.Spawned)
             {
-                SoundDefOf.PersonalShieldReset.PlayOneShot(new TargetInfo(this.wearer.Position, this.wearer.Map, false));
-                MoteMaker.ThrowLightningGlow(this.wearer.TrueCenter(), this.wearer.Map, 3f);
+                SoundDefOf.EnergyShieldReset.PlayOneShot(new TargetInfo(base.Wearer.Position, base.Wearer.Map, false));
+                MoteMaker.ThrowLightningGlow(base.Wearer.TrueCenter(), base.Wearer.Map, 3f);
             }
             this.ticksToReset = -1;
             this.energy = this.EnergyOnReset;
@@ -209,7 +210,7 @@ namespace PersonalShieldMKII
 			if (this.ShieldState == ShieldState.Active && this.ShouldDisplay)
 			{
 				float num = Mathf.Lerp(1.2f, 1.55f, this.energy);
-				Vector3 vector = this.wearer.Drawer.DrawPos;
+				Vector3 vector = base.Wearer.Drawer.DrawPos;
                 vector.y = Altitudes.AltitudeFor(AltitudeLayer.MoteOverhead);
 				int num2 = Find.TickManager.TicksGame - this.lastAbsorbDamageTick;
 				if (num2 < 8)
@@ -225,7 +226,7 @@ namespace PersonalShieldMKII
                 Graphics.DrawMesh(MeshPool.plane10, matrix, Apparel_PersonalShieldMKII.BubbleMat, 0);
 			}
 		}
-		public override bool AllowVerbCast(IntVec3 root, TargetInfo targ)
+		public override bool AllowVerbCast(IntVec3 root, Map map, LocalTargetInfo targ)
 		{
 			return true;
 		}

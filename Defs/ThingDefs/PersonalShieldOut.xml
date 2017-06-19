@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <ThingDef Name="ApparelShieldBase" Abstract="True">
+  <ThingDef Name="ApparelShieldBaseX" Abstract="True">
     <thingClass>Apparel</thingClass>
     <category>Item</category>
     <selectable>True</selectable>
@@ -14,8 +14,8 @@
     <statBases>
       <MaxHitPoints>100</MaxHitPoints>
       <Flammability>1.0</Flammability>
-      <DeteriorationRate>1</DeteriorationRate>
-      <SellPriceFactor>0.5</SellPriceFactor>
+      <DeteriorationRate>0.5</DeteriorationRate>
+      <SellPriceFactor>0.75</SellPriceFactor>
     </statBases>
     <altitudeLayer>Item</altitudeLayer>
     <alwaysHaulable>True</alwaysHaulable>
@@ -36,7 +36,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="ApparelShieldBase">
+  <ThingDef ParentName="ApparelShieldBaseX">
     <defName>PersonalShieldMKII</defName>
     <thingClass>PersonalShieldMKII.Apparel_PersonalShieldMKII</thingClass>
     <label>personal shield MKII</label>
@@ -49,21 +49,38 @@
     <statBases>
       <MarketValue>2000</MarketValue>
       <Mass>3</Mass>
-      <PersonalShieldRechargeRate>0.10</PersonalShieldRechargeRate>
-      <PersonalShieldEnergyMax>1.1</PersonalShieldEnergyMax>
+      <EnergyShieldRechargeRate>0.10</EnergyShieldRechargeRate>
+      <EnergyShieldEnergyMax>1.1</EnergyShieldEnergyMax>
     </statBases>
+    		<costList>
+			<Component>6</Component>
+			<Plasteel>50</Plasteel>
+			<Uranium>5</Uranium>
+		</costList>
+    <recipeMaker>
+			<unfinishedThingDef>UnfinishedBelt</unfinishedThingDef>
+			<researchPrerequisite>ShieldBelt</researchPrerequisite>
+			<workSpeedStat>SmithingSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Machining</soundWorking>
+			<recipeUsers>
+				<li>TableMachining</li>
+			</recipeUsers>
+		</recipeMaker>
     <apparel>
+    <careIfWornByCorpse>false</careIfWornByCorpse>
       <bodyPartGroups>
-        <li>Torso</li>
+        <li>Waist</li>
       </bodyPartGroups>
       <layers>
-        <li>Accessory</li>
+        <li>Belt</li>
       </layers>
-      <commonality>1.2</commonality>
       <tags>
-        <li>PersonalShield</li>
+        <li>BeltDefense</li>
       </tags>
     </apparel>
+  <generateAllowChance>0.15</generateAllowChance>
     <colorGenerator Class="ColorGenerator_Options">
       <options>
         <li>

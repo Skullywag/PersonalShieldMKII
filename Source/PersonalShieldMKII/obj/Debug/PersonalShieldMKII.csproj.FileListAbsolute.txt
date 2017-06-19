@@ -72,3 +72,14 @@ C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PersonalShieldMKII-A
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PersonalShieldMKII-A16\Source\PersonalShieldMKII\obj\Debug\PersonalShieldMKII.csprojResolveAssemblyReference.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PersonalShieldMKII-A16\Source\PersonalShieldMKII\obj\Debug\PersonalShieldMKII.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PersonalShieldMKII-A16\Source\PersonalShieldMKII\obj\Debug\PersonalShieldMKII.pdb
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\PersonalShieldMKII.dll
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\PersonalShieldMKII.pdb
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\Assembly-CSharp.dll
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\UnityEngine.dll
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\NAudio.dll
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\NVorbis.dll
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\PersonalShieldMKII\Source\PersonalShieldMKII\bin\Debug\UnityEngine.xml
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\PersonalShieldMKII\Source\PersonalShieldMKII\obj\Debug\PersonalShieldMKII.csprojResolveAssemblyReference.cache
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\PersonalShieldMKII\Source\PersonalShieldMKII\obj\Debug\PersonalShieldMKII.dll
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\PersonalShieldMKII\Source\PersonalShieldMKII\obj\Debug\PersonalShieldMKII.pdb
